@@ -8,7 +8,8 @@ The purpose of this project is to develop a web service that allows users to res
 In order to clone the repo please use following command
 
 ```
-git clone https://gitlab.com/portfolio9705045/sheba.git
+git clone https://github.com/shafiq29/sheba.git
+
 ```
 
 ## Integrate with your tools
@@ -47,9 +48,9 @@ The backend running at http://localhost:5000/api can be tested either by postman
 
 
 # Deliverables:
--Functional code with well written steps to run the project on any computer. The steps are all in this README.md file
--Unit tests covering different scenarios (successful reservation, insufficient seats,invalid event ID).
--For this particular project in brief explanation, my approach to concurrency control was to solve using db transaction handling using the sequelize ORM so that unwanted things roll back.
+- Functional code with well written steps to run the project on any computer. The steps are all in this README.md file
+- Unit tests covering different scenarios (successful reservation, insufficient seats,invalid event ID).
+- For this particular project in brief explanation, my approach to concurrency control was to solve using db transaction handling using the sequelize ORM so that unwanted things roll back.
 
 ## Evaluation Criteria
 
