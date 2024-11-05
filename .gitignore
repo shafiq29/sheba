@@ -1,0 +1,47 @@
+# Node.js dependencies for both backend and frontend
+/node_modules/
+
+# Build output (React frontend build files)
+frontend/build/
+
+# Docker files
+.docker/
+docker-compose.override.yml  # Local Docker Compose override configuration (if used)
+.dockerignore                # Ignore Docker ignore file (it's not necessary to commit this)
+
+# Environment files (local development or production settings)
+.env
+.env.local
+.env.production
+.env.development
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE/editor configuration files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# PostgreSQL data (make sure not to commit database volumes or data)
+postgres_data/   # Docker volume for PostgreSQL (can be customized in your docker-compose.yml)
+
+# Temporary files
+*.tmp
+*.swp
+
+# Build artifacts (e.g., transpiled code, assets)
+dist/
+build/
+
+# Other configuration files you might not want to commit
+docker-compose.override.yml
+*.tgz
+
+# Ignore local configuration for testing (e.g., jest config or ot
