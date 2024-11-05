@@ -77,12 +77,12 @@ For the Bonus points I was excited to showcase additional skills in cloud deploy
 - Create an amazon ec2 instance 
 - Download pem file for credentials
 - ssh to the aws cli
-- add ssh fingerprint to clone the source code to the instance from gitlab
-- finally install docker and docker compose inside of the server
-- run the docker-compose up --build to up the containers
+- Add ssh fingerprint to clone the source code to the instance from gitlab
+- Finally install docker and docker compose inside of the server
+- Run the docker-compose up --build to up the containers
 
 
-## Special Notes:
-The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials.
+## Special Notes and Limitations:
+The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials. I focused in majority of backend service and its implementation with proper CI/CD and dev experience improvement so the UI is not so attractive right now, but we all know we can make great UI's within the timeframe if we have great working backend.
 
 Thank you so much!
