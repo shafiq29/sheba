@@ -12,6 +12,29 @@ exports.createEvent = async (req, res) => {
     }
 };
 
+exports.updateEvent = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, totalSeats, date } = req.body;
+
+        const event = await Event.findByPk(id);
+        if (!event) {
+            return res.status(404).json({ error: 'Error: Event not found' });
+        }
+
+        // Update event details
+        event.name = name || event.name;
+        event.totalSeats = totalSeats || event.totalSeats;
+        event.date = date || event.date;
+
+        await event.save();
+
+        res.status(200).json({ message: 'Event updated successfully', event });
+    } catch (error) {
+        res.status(500).json({ error: 'Error: Could not update event' });
+    }
+};
+
 exports.getAllEvents = async (req,res) => { 
     try {
         const events = await Event.findAll();
