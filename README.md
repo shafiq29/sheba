@@ -65,6 +65,11 @@ The backend running at http://localhost:5000/api can be tested either by postman
 
 For this assignment I tried to focus as much as possible on core functionalities of an online event reservation system. It will definitely help you to know my skills better to assesses my ability to design and implement APIs, handle concurrency, and write unit tests.
 
+## API Documentation:
+
+http://localhost:5000/api-docs/
+
+
 ## My Attempt to get the Bonus!
 
 For the Bonus points I was excited to showcase additional skills in cloud deployment and developer experience. I did make it as a containerized application in order to deploy it to Amazon EC2 instance running on linux. I used a free tier using personal debit card so cannot show the live link, but here are the steps:
