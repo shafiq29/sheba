@@ -1,6 +1,22 @@
-const sequelize = require('../config/database');
-const Event = require('../models/Event');
-const Reservation = require('../models/Reservation');
+const sequelize     = require('../config/database');
+const Event         = require('../models/Event');
+const Reservation   = require('../models/Reservation');
+// const nodemailer    = require('nodemailer');
+
+// const transporter   = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'youremail@gmail.com',
+//     pass: 'yourpassword'
+//   }
+// });
+
+// const mailOptions = {
+//   from      : 'youremail@gmail.com',
+//   to        : 'myfriend@yahoo.com',
+//   subject   : 'Confirmation of Reservation',
+//   text      : 'Thanks for reservation!'
+// };
 
 exports.reserveSeats = async (req, res) => {
     const { eventId, userEmail, seats } = req.body;
@@ -34,6 +50,14 @@ exports.reserveSeats = async (req, res) => {
             return reservation;
 
         });
+
+        // transporter.sendMail(mailOptions, function(error, info) {
+        //     if (error) {
+        //       console.log(error);
+        //     } else {
+        //       console.log('Email sent: ' + info.response);
+        //     }
+        // });
 
         res.status(201).json({ message: 'Success: completed successfully', reservation: result });
 

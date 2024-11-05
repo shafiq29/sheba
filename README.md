@@ -5,7 +5,7 @@ The purpose of this project is to develop a web service that allows users to res
 
 ## Cloning the repo
 
-In order to clone the repo please use following command
+In order to clone the repo please use following command:
 
 ```
 git clone https://github.com/shafiq29/sheba.git
@@ -32,6 +32,11 @@ git clone https://github.com/shafiq29/sheba.git
 - Designed the API to be RESTful and well-documented it with the integration of Swagger
 - Written unit tests for your API endpoint.
 - Designed a frontend in react to create events for admin and list events and reservation for users
+
+## Unit Test:
+- This is done using jest 
+- Run npm test
+
 
 ## Test and Deploy
 
@@ -70,5 +75,9 @@ For the Bonus points I was excited to showcase additional skills in cloud deploy
 - add ssh fingerprint to clone the source code to the instance from gitlab
 - finally install docker and docker compose inside of the server
 - run the docker-compose up --build to up the containers
+
+
+## Special Notes:
+The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials.
 
 Thank you so much!
