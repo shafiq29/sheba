@@ -30,8 +30,6 @@ services:
       - POSTGRES_USER=sheba_user
       - POSTGRES_PASSWORD=sheba_password
       - POSTGRES_DB=sheba_db
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - app-network
 

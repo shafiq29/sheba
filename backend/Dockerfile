@@ -14,5 +14,7 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 5000
 
+CMD ["npx", "sequelize-cli", "db:migrate"]
+
 # Start the application
 CMD ["npm", "start"]
