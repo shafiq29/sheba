@@ -83,6 +83,12 @@ For the Bonus points I was excited to showcase additional skills in cloud deploy
 
 
 ## Special Notes and Limitations:
-The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials. I focused in majority of backend service and its implementation with proper CI/CD and dev experience improvement so the UI is not so attractive right now, but we all know we can make great UI's within the timeframe if we have great working backend.
+The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials. I focused in majority of backend service and its implementation with proper CI/CD and dev experience improvement so the UI is not so attractive right now, but we all know we can make great UI's within the timeframe if we have great working backend. Though there are more approaches like optimistic and pessimistic locking and queue based solutions all have their own pros and cons that we can discuss when we talk in person interview.
+
+## Special Updates
+
+The User Experience Improvements can be found on a seperate branch feature/ui-improvement
+
+
 
 Thank you so much!
