@@ -65,6 +65,8 @@ router.get('/events', eventController.getAllEvents);
  *                   example: "This is an example API endpoint"
  */
 router.delete('/events/:id', eventController.deleteEvent);
+router.put('/event/:id', eventController.updateEvent);
+router.get('/events/:id', eventController.getEventById);
 
 
 router.post('/reservations', reservationController.reserveSeats);
