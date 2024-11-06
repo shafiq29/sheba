@@ -43,7 +43,7 @@ exports.reserveSeats = async (req, res) => {
 
             // Save the updated event
             await event.save({ transaction: t });
-
+            console.log(eventId);
             // Create a reservation entry
             const reservation = await Reservation.create({ eventId, userEmail, seats }, { transaction: t });
 
@@ -69,7 +69,15 @@ exports.reserveSeats = async (req, res) => {
 
 exports.listReservations = async (req,res) => { 
     try {
-        const reservations = await Reservation.findAll();
+        const reservations = await Reservation.findAll({
+            include: [
+                {
+                    model: Event,
+                    as: 'event', // this should match the alias defined in the association
+                    attributes: ['name','totalSeats','reservedSeats'] // only fetch the event name
+                }
+            ]
+        });
         res.status(200).json(reservations);
         
         

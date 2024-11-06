@@ -6,6 +6,10 @@ const ReservationForm = () => {
   const [userEmail, setUserEmail] = useState('');
   const [seats, setSeats] = useState('');
 
+  const reloadPage = (id) => {
+    window.location.href = `/reservation`; // Navigates and reloads the page
+  };
+
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
@@ -14,6 +18,7 @@ const ReservationForm = () => {
       setEventId('');
       setUserEmail('');
       setSeats('');
+      reloadPage();
     } catch (error) {
       console.error('Failed to reserve seats', error);
       alert('Failed to reserve seats. Please try again.');
