@@ -10,7 +10,8 @@ const EventForm = ({ initialData, onCreate, onEdit, isEditMode }) => {
     if (initialData) {
       setName(initialData.name);
       setTotalSeats(initialData.totalSeats.toString());
-      setDate(initialData.date);
+      const formattedDate = new Date(initialData.date).toISOString().slice(0, 16);
+      setDate(formattedDate);
     }
   }, [initialData]);
 

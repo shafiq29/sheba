@@ -9,7 +9,7 @@ const EventList = ({ events, onDelete }) => {
     <ul>
       {events.map((event) => (
         <li key={event.id}>
-          {event.name} - {event.date} - {event.totalSeats} seats
+          {event.name} - { new Date(event.date).toLocaleString()} - {event.totalSeats} seats
           <button onClick={() => handleEditClick(event.id)} style={{ marginLeft: '10px' }}>
             Edit
           </button>
