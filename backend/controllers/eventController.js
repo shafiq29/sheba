@@ -6,6 +6,7 @@ exports.createEvent = async (req, res) => {
         console.log(req.body);
         const event = await Event.create({name, totalSeats, date});
         res.status(200).json(event);
+        // res.redirect('/eventList');
 
     } catch (error) {
         res.status(500).json({error: 'Error: Event creation failed'});
@@ -32,6 +33,22 @@ exports.updateEvent = async (req, res) => {
         res.status(200).json({ message: 'Event updated successfully', event });
     } catch (error) {
         res.status(500).json({ error: 'Error: Could not update event' });
+    }
+};
+
+
+exports.getEventById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        
+        const event = await Event.findByPk(id);
+        if (!event) {
+            return res.status(404).json({ error: 'Error: Event not found' });
+        }
+        
+        res.status(200).json(event);
+    } catch (error) {
+        res.status(500).json({ error: 'Error: Could not fetch event' });
     }
 };
 

@@ -12,6 +12,7 @@ const ReservationList = () => {
     try {
       const response = await api.get('/reservations');
       setReservations(response.data);
+      
     } catch (error) {
       console.error('Failed to fetch reservations', error);
     }
@@ -21,7 +22,7 @@ const ReservationList = () => {
     <ul>
       {reservations.map((reservation) => (
         <li key={reservation.id}>
-          Event ID: {reservation.eventId} - Email: {reservation.userEmail} - Seats: {reservation.seats}
+          Event: {reservation.event?.name || 'N/A'} - Email: {reservation.userEmail} - Seats: {reservation.seats} - Total Seats: {reservation.event?.totalSeats || 'N/A'} - Reserved Seats: {reservation.event?.reservedSeats || 'N/A'}
         </li>
       ))}
     </ul>

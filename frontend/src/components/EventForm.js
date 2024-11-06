@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const EventForm = ({ onCreate }) => {
+const EventForm = ({ initialData, onCreate, onEdit, isEditMode }) => {
   const [name, setName] = useState('');
   const [totalSeats, setTotalSeats] = useState('');
   const [date, setDate] = useState('');
 
+  // Populate fields if editing an existing event
+  useEffect(() => {
+    if (initialData) {
+      setName(initialData.name);
+      setTotalSeats(initialData.totalSeats.toString());
+      const formattedDate = new Date(initialData.date).toISOString().slice(0, 16);
+      setDate(formattedDate);
+    }
+  }, [initialData]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onCreate({ name, totalSeats: parseInt(totalSeats), date });
+    const eventData = { name, totalSeats: parseInt(totalSeats), date };
+    
+    if (isEditMode) {
+      onEdit(eventData); // Call onEdit if in edit mode
+    } else {
+      onCreate(eventData); // Call onCreate if in create mode
+    }
+
     setName('');
     setTotalSeats('');
     setDate('');
@@ -35,7 +52,7 @@ const EventForm = ({ onCreate }) => {
         onChange={(e) => setDate(e.target.value)}
         required
       />
-      <button type="submit">Create Event</button>
+      <button type="submit">{isEditMode ? 'Update' : 'Create Event'}</button>
     </form>
   );
 };
