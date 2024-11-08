@@ -72,7 +72,8 @@ http://localhost:5000/api-docs/
 
 ## My Attempt to get the Bonus!
 
-For the Bonus points I was excited to showcase additional skills in cloud deployment and developer experience. I did make it as a containerized application in order to deploy it to Amazon EC2 instance running on linux. I used a free tier using personal debit card so cannot show the live link, but here are the steps:
+For the Bonus points I was excited to showcase additional skills in cloud deployment and developer experience. I did make it as a containerized application in order to deploy it to Amazon EC2 instance running on linux. I used a free tier using personal debit card so the limited live link
+is here http://54.255.141.225:8080/events
 
 - Create an amazon ec2 instance 
 - Download pem file for credentials
@@ -81,6 +82,8 @@ For the Bonus points I was excited to showcase additional skills in cloud deploy
 - Finally install docker and docker compose inside of the server
 - Run the docker-compose up --build to up the containers
 
+Later I used some efficient approach using the dockerhub deploy and pull it in the ec2 instance.
+
 
 ## Special Notes and Limitations:
 The email send mechanism will not be functional in local machine, that is why the part is commented out. All we will need to do is turn on it on production and use mail server credentials. I focused in majority of backend service and its implementation with proper CI/CD and dev experience improvement so the UI is not so attractive right now, but we all know we can make great UI's within the timeframe if we have great working backend. Though there are more approaches like optimistic and pessimistic locking and queue based solutions all have their own pros and cons that we can discuss when we talk in person interview.
@@ -88,7 +91,7 @@ The email send mechanism will not be functional in local machine, that is why th
 ## Special Updates
 
 The User Experience Improvements can be found on a seperate branch feature/ui-improvement
-
+The live link is also available at aws cloud http://54.255.141.225:8080/events
 
 
 Thank you so much!
