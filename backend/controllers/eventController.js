@@ -69,12 +69,14 @@ exports.getAllEvents = async (req,res) => {
 exports.deleteEvent = async (req,res) => { 
     try {
         const {id} = req.params;
-        await Event.destroy({where: {id}});
+        await Event.destroy({
+            where: {
+              id: id,
+            },
+          });
         res.status(200).json({message: 'Event deleted successfully'});
     } catch(error) {
         res.status(500).json({error: 'Error: Could not delete event'});
-        
-
 
     }
 };

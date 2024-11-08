@@ -7,18 +7,22 @@ const EventList = ({ events, onDelete }) => {
 
   return (
     <ul>
-      {events.map((event) => (
-        <li key={event.id}>
-          {event.name} - { new Date(event.date).toLocaleString()} - {event.totalSeats} seats
-          <button onClick={() => handleEditClick(event.id)} style={{ marginLeft: '10px' }}>
-            Edit
-          </button>
-          <button onClick={() => onDelete(event.id)} style={{ marginLeft: '10px' }}>
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
+  {Array.isArray(events) && events.length > 0 ? (
+    events.map((event) => (
+      <li key={event.id}>
+        {event.name} - {new Date(event.date).toLocaleString()} - {event.totalSeats} seats
+        <button onClick={() => handleEditClick(event.id)} style={{ marginLeft: '10px' }}>
+          Edit
+        </button>
+        <button onClick={() => onDelete(event.id)} style={{ marginLeft: '10px' }}>
+          Delete
+        </button>
+      </li>
+    ))
+  ) : (
+    <p>No events available</p>
+  )}
+</ul>
   );
 };
 

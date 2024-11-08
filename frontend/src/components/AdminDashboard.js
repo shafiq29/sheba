@@ -60,7 +60,8 @@ const AdminDashboard = ({ selectedEventId }) => {
   const handleDeleteEvent = async (id) => {
     try {
       await api.delete(`/events/${id}`);
-      fetchEvents();
+      // fetchEvents();
+      window.location.href = `/events`;
     } catch (error) {
       console.error('Failed to delete event', error);
     }

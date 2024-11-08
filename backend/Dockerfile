@@ -4,9 +4,9 @@ FROM node:18
 # Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and install dependencies
-COPY package*.json ./
-RUN npm install
+# Copy package.json and yarn.lock, then install dependencies
+COPY package.json ./
+RUN yarn install --verbose
 
 # Copy the rest of the application
 COPY . .
@@ -14,7 +14,8 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 5000
 
-CMD ["npx", "sequelize-cli", "db:migrate"]
+# Run database migrations
+CMD ["yarn", "sequelize-cli", "db:migrate"]
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
